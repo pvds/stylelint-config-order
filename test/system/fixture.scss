@@ -36,9 +36,8 @@
     $block_margin: 16px;
     $block_margin-sm: 32px;
     $block_padding: 4px;
-    $block_offset-top: 24px;
 
-    --selector_offset-top: #{$block_offset-top};
+    --selector_offset-top: 24px;
 
     $block--size_padding: 12px;
     $block--size__element_margin-bottom: 8px;

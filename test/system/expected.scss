@@ -9,12 +9,11 @@
     $block_margin: 16px;
     $block_margin-sm: 32px;
     $block_padding: 4px;
-    $block_offset-top: 24px;
 
     $block--size_padding: 12px;
     $block--size__element_margin-bottom: 8px;
 
-    --selector_offset-top: #{$block_offset-top};
+    --selector_offset-top: 24px;
 
     %block-placeholder {
         cursor: pointer;
@@ -71,6 +70,7 @@
      */
 
     &__element {
+
         @extend %block-placeholder;
 
         color: black;
@@ -87,9 +87,11 @@
        ========================================================================== */
 
     &--size-modifier {
+
         padding: $block--size_padding;
         #{$block} {
             &__element {
+
                 display: flex;
                 margin-bottom: $block--size__element_margin-bottom;
             }

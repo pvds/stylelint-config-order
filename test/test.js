@@ -11,9 +11,9 @@ function testConfigFile() {
     return Promise.resolve();
 }
 
-function testOrder() {
-    const fixture = fs.readFileSync(path.join(__dirname, 'fixture.scss'), 'utf8');
-    const expected = fs.readFileSync(path.join(__dirname, 'expected.scss'), 'utf8');
+function testSystem() {
+    const fixture = fs.readFileSync(path.join(__dirname, 'system/fixture.scss'), 'utf8');
+    const expected = fs.readFileSync(path.join(__dirname, 'system/expected.scss'), 'utf8');
 
     return stylelint
         .lint({
@@ -27,8 +27,8 @@ function testOrder() {
         });
 }
 
-Promise.all([testConfigFile(), testOrder()])
-    .then(() => console.log('OK'))
+Promise.all([testConfigFile(), testSystem()])
+    .then(() => console.log('Stylelint output as expected'))
     .catch((e) => {
         console.error(e.name, e.message);
         process.exit(-1);
