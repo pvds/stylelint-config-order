@@ -30,7 +30,8 @@
   "files": [],
   "scripts": {
     "test": "node test/test.js",
-    "format": "prettier --write **/*.{js,ts,md,mdx,html,css,scss}"
+    "lint": "eslint --fix .",
+    "format": "prettier --write **/*.{js,md}"
   },
   "husky": {
     "hooks": {
@@ -38,9 +39,12 @@
     }
   },
   "lint-staged": {
-    "*.{js,ts,md,mdx,html,css,scss}": "prettier --write"
+    "*.{js}": "eslint --fix",
+    "*.{js,md}": "prettier --write"
   },
   "devDependencies": {
+    "eslint": "^7.8.1",
+    "eslint-config-google": "^0.14.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.3.0",
     "prettier": "^2.1.1",
@@ -50,6 +54,7 @@
     "stylelint": ">=13"
   },
   "dependencies": {
+    "eslint-config-prettier": "^6.11.0",
     "stylelint-order": "^4.1.0"
   }
 }
