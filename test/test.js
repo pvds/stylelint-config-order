@@ -3,6 +3,10 @@ const fs = require('fs');
 const path = require('path');
 const stylelint = require('stylelint');
 
+/**
+ * Resolve test configuration file
+ * @return {Promise<void>}
+ */
 function testConfigFile() {
   assert.doesNotThrow(() => {
     require(path.join(__dirname, '..', 'index.js'));
